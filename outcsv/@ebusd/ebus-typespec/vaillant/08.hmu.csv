@@ -203,7 +203,7 @@ r,,,Status01,Vorlauftemperatur/Rücklauftemperatur/Aussentemperatur/WW Temperatu
 r,,,Status02,Betriebsart/Maximaltemperatur/ReglerCurrentTemp/Maximaltemperatur/ReglerCurrentTemp,,,b511,02,hwcmode,,UCH,0=disabled;1=on;2=off;3=auto,,hot water mode,temp0,,UCH,,°C,max temperature,temp1,,D1C,,°C,current temperature,temp0_2,,UCH,,°C,max temperature,temp1_2,,D1C,,°C,current temperature
 uw,,,StatusCirPump,Status circulation pump,,,b512,00,uch,,UCH,0=off;100=on,,
 r,,,Currenterror,Current errors,,,b503,0001,error,,UIN,,,error number,error_2,,UIN,,,error number,error_3,,UIN,,,error number,error_4,,UIN,,,error number,error_5,,UIN,,,error number
-r,,,Errorhistory,Error_History,,,b503,0101,index,m,UCH,,,,status,,UCH,,,Status,time,,VTM,,,time,date,,HDA:3,,,date,error,,UIN,,,error number
+r,,,Errorhistory,Error_History,,,b503,0101,index,m,UCH,,,,status,,UCH,,,Status,time,,BTM,,,time,date,,BDA:3,,,date,error,,UIN,,,error number
 w,,install,Clearerrorhistory,Clear error history,,,b503,0201,cleared,s,UCH,0=no;1=yes,,
 r,,,StatEnergySumYear,,,,b516,1003ffff,source,m,UCH,1=solar;2=environment;3=electricity;4=gas,,the energy source,usage,m,UCH,0=all;3=heat;4=water;5=cool,,the energy usage,ign2,m,UCH,=0,,,year,m,UCH,2,,the year as offset from 2000,ign,,IGN:7,,,,value,,EXP,1000,kWh,
 r,,,StatSolarEnergySum,,,,b516,1000ffff01000000,ign,,IGN:7,,,,value,,EXP,1000,kWh,

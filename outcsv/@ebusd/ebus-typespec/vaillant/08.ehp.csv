@@ -317,7 +317,7 @@ w,,install,StorageTempTopOffset,T_HB_Top_Offset: Offset for calibrating temperat
 w,,install,Iotest,I/O test,,,b506,02,value,,UCH,0=off;1=coolvalve;2=sourcepump;3=hcpump;4=injector;5=caseheater;6=backup;7=hwchcvalve;8=cirpump;9=sc2pump;10=hc2pump;11=hc2mixeropen;12=hc2mixerclose,,
 w,,install,Ioteststop,stop I/O test,,,b506,01,
 r,,,Currenterror,Current errors,,,b503,0001,error,,UIN,,,error number,error_2,,UIN,,,error number,error_3,,UIN,,,error number,error_4,,UIN,,,error number,error_5,,UIN,,,error number
-r,,,Errorhistory,Error_History,,,b503,0101,index,m,UCH,,,,status,,UCH,,,Status,time,,VTM,,,time,date,,HDA:3,,,date,error,,UIN,,,error number
+r,,,Errorhistory,Error_History,,,b503,0101,index,m,UCH,,,,status,,UCH,,,Status,time,,BTM,,,time,date,,BDA:3,,,date,error,,UIN,,,error number
 w,,install,Clearerrorhistory,Clear error history,,,b503,0201,cleared,s,UCH,0=no;1=yes,,
 r,,,DateTime,date/time,,,b504,00,dcfstate,,UCH,0=nosignal;1=ok;2=sync;3=valid,,DCF receiver state,btime,,BTI,,,time,bdate,,BDA,,,date,temp2,,D2B,,°C,temperature
 uw,,,SetMode,Operation mode,,,b510,00,hcmode,,UCH,0=auto;1=off;2=heat;3=acs;23=sync,,boiler mode,flowtempdesired,,D1C,,°C,temperature,hwctempdesired,,D1C,,°C,temperature,hwcflowtempdesired,,UCH,,°C,temperature,ign,,IGN:1,,,,disablehc,,BI0,,,,disablehwctapping,,BI1,,,,disablehwcload,,BI2,,,,ign_1,,IGN:1,,,,remotecontrolhcpump,,BI0,,,,releasebackup,,BI1,,,,releasecooling,,BI2,,,

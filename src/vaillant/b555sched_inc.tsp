@@ -22,7 +22,6 @@ namespace B555sched_inc {
   model w_a6 {}
 
   /** number of slots per weekday (heating timer zone 1) */
-  @poll(5)
   @inherit(r_a4)
   @ext(0x00, 0x00)
   model Z1TimerHeatSlots {
@@ -38,7 +37,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 monday slot 1 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x00, 0x00)
   model Z1TimerHeat_Monday0 {
@@ -49,7 +47,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 monday slot 2 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x00, 0x01)
   model Z1TimerHeat_Monday1 {
@@ -60,7 +57,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 monday slot 3 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x00, 0x02)
   model Z1TimerHeat_Monday2 {
@@ -71,7 +67,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 monday slot 4 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x00, 0x03)
   model Z1TimerHeat_Monday3 {
@@ -82,7 +77,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 monday slot 5 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x00, 0x04)
   model Z1TimerHeat_Monday4 {
@@ -93,7 +87,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 monday slot 6 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x00, 0x05)
   model Z1TimerHeat_Monday5 {
@@ -104,7 +97,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 tuesday slot 1 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x01, 0x00)
   model Z1TimerHeat_Tuesday0 {
@@ -115,7 +107,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 tuesday slot 2 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x01, 0x01)
   model Z1TimerHeat_Tuesday1 {
@@ -126,7 +117,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 tuesday slot 3 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x01, 0x02)
   model Z1TimerHeat_Tuesday2 {
@@ -137,7 +127,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 tuesday slot 4 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x01, 0x03)
   model Z1TimerHeat_Tuesday3 {
@@ -148,7 +137,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 tuesday slot 5 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x01, 0x04)
   model Z1TimerHeat_Tuesday4 {
@@ -159,7 +147,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 tuesday slot 6 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x01, 0x05)
   model Z1TimerHeat_Tuesday5 {
@@ -170,7 +157,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 wednesday slot 1 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x02, 0x00)
   model Z1TimerHeat_Wednesday0 {
@@ -181,7 +167,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 wednesday slot 2 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x02, 0x01)
   model Z1TimerHeat_Wednesday1 {
@@ -192,7 +177,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 wednesday slot 3 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x02, 0x02)
   model Z1TimerHeat_Wednesday2 {
@@ -203,7 +187,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 wednesday slot 4 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x02, 0x03)
   model Z1TimerHeat_Wednesday3 {
@@ -214,7 +197,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 wednesday slot 5 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x02, 0x04)
   model Z1TimerHeat_Wednesday4 {
@@ -225,7 +207,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 wednesday slot 6 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x02, 0x05)
   model Z1TimerHeat_Wednesday5 {
@@ -236,7 +217,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 thursday slot 1 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x03, 0x00)
   model Z1TimerHeat_Thursday0 {
@@ -247,7 +227,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 thursday slot 2 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x03, 0x01)
   model Z1TimerHeat_Thursday1 {
@@ -258,7 +237,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 thursday slot 3 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x03, 0x02)
   model Z1TimerHeat_Thursday2 {
@@ -269,7 +247,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 thursday slot 4 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x03, 0x03)
   model Z1TimerHeat_Thursday3 {
@@ -280,7 +257,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 thursday slot 5 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x03, 0x04)
   model Z1TimerHeat_Thursday4 {
@@ -291,7 +267,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 thursday slot 6 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x03, 0x05)
   model Z1TimerHeat_Thursday5 {
@@ -302,7 +277,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 friday slot 1 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x04, 0x00)
   model Z1TimerHeat_Friday0 {
@@ -313,7 +287,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 friday slot 2 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x04, 0x01)
   model Z1TimerHeat_Friday1 {
@@ -324,7 +297,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 friday slot 3 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x04, 0x02)
   model Z1TimerHeat_Friday2 {
@@ -335,7 +307,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 friday slot 4 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x04, 0x03)
   model Z1TimerHeat_Friday3 {
@@ -346,7 +317,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 friday slot 5 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x04, 0x04)
   model Z1TimerHeat_Friday4 {
@@ -357,7 +327,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 friday slot 6 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x04, 0x05)
   model Z1TimerHeat_Friday5 {
@@ -368,7 +337,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 saturday slot 1 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x05, 0x00)
   model Z1TimerHeat_Saturday0 {
@@ -379,7 +347,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 saturday slot 2 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x05, 0x01)
   model Z1TimerHeat_Saturday1 {
@@ -390,7 +357,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 saturday slot 3 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x05, 0x02)
   model Z1TimerHeat_Saturday2 {
@@ -401,7 +367,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 saturday slot 4 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x05, 0x03)
   model Z1TimerHeat_Saturday3 {
@@ -412,7 +377,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 saturday slot 5 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x05, 0x04)
   model Z1TimerHeat_Saturday4 {
@@ -423,7 +387,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 saturday slot 6 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x05, 0x05)
   model Z1TimerHeat_Saturday5 {
@@ -434,7 +397,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 sunday slot 1 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x06, 0x00)
   model Z1TimerHeat_Sunday0 {
@@ -445,7 +407,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 sunday slot 2 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x06, 0x01)
   model Z1TimerHeat_Sunday1 {
@@ -456,7 +417,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 sunday slot 3 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x06, 0x02)
   model Z1TimerHeat_Sunday2 {
@@ -467,7 +427,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 sunday slot 4 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x06, 0x03)
   model Z1TimerHeat_Sunday3 {
@@ -478,7 +437,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 sunday slot 5 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x06, 0x04)
   model Z1TimerHeat_Sunday4 {
@@ -489,7 +447,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 sunday slot 6 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x06, 0x05)
   model Z1TimerHeat_Sunday5 {
@@ -500,7 +457,6 @@ namespace B555sched_inc {
   }
 
   /** number of slots per weekday (cooling timer zone 1) */
-  @poll(5)
   @inherit(r_a4)
   @ext(0x00, 0x01)
   model Z1TimerCoolSlots {
@@ -516,7 +472,6 @@ namespace B555sched_inc {
   }
 
   /** cooling timer zone 1 monday slot 1 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x01, 0x00, 0x00)
   model Z1TimerCool_Monday0 {
@@ -527,7 +482,6 @@ namespace B555sched_inc {
   }
 
   /** cooling timer zone 1 tuesday slot 1 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x01, 0x01, 0x00)
   model Z1TimerCool_Tuesday0 {
@@ -538,7 +492,6 @@ namespace B555sched_inc {
   }
 
   /** cooling timer zone 1 wednesday slot 1 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x01, 0x02, 0x00)
   model Z1TimerCool_Wednesday0 {
@@ -549,7 +502,6 @@ namespace B555sched_inc {
   }
 
   /** cooling timer zone 1 thursday slot 1 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x01, 0x03, 0x00)
   model Z1TimerCool_Thursday0 {
@@ -560,7 +512,6 @@ namespace B555sched_inc {
   }
 
   /** cooling timer zone 1 friday slot 1 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x01, 0x04, 0x00)
   model Z1TimerCool_Friday0 {
@@ -571,7 +522,6 @@ namespace B555sched_inc {
   }
 
   /** cooling timer zone 1 saturday slot 1 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x01, 0x05, 0x00)
   model Z1TimerCool_Saturday0 {
@@ -582,7 +532,6 @@ namespace B555sched_inc {
   }
 
   /** cooling timer zone 1 sunday slot 1 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x01, 0x06, 0x00)
   model Z1TimerCool_Sunday0 {
@@ -593,7 +542,6 @@ namespace B555sched_inc {
   }
 
   /** number of slots per weekday (hot water timer) */
-  @poll(5)
   @inherit(r_a4)
   @ext(0x00, 0x02)
   model HwcTimerSlots {
@@ -609,7 +557,6 @@ namespace B555sched_inc {
   }
 
   /** hot water timer monday slot 1 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x02, 0x00, 0x00)
   model HwcTimer_Monday0 {
@@ -620,7 +567,6 @@ namespace B555sched_inc {
   }
 
   /** hot water timer tuesday slot 1 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x02, 0x01, 0x00)
   model HwcTimer_Tuesday0 {
@@ -631,7 +577,6 @@ namespace B555sched_inc {
   }
 
   /** hot water timer wednesday slot 1 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x02, 0x02, 0x00)
   model HwcTimer_Wednesday0 {
@@ -642,7 +587,6 @@ namespace B555sched_inc {
   }
 
   /** hot water timer thursday slot 1 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x02, 0x03, 0x00)
   model HwcTimer_Thursday0 {
@@ -653,7 +597,6 @@ namespace B555sched_inc {
   }
 
   /** hot water timer friday slot 1 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x02, 0x04, 0x00)
   model HwcTimer_Friday0 {
@@ -664,7 +607,6 @@ namespace B555sched_inc {
   }
 
   /** hot water timer saturday slot 1 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x02, 0x05, 0x00)
   model HwcTimer_Saturday0 {
@@ -675,7 +617,6 @@ namespace B555sched_inc {
   }
 
   /** hot water timer sunday slot 1 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x02, 0x06, 0x00)
   model HwcTimer_Sunday0 {
@@ -770,7 +711,6 @@ namespace B555sched_inc {
   }
 
   /** hot water timer monday slot 2 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x02, 0x00, 0x01)
   model HwcTimer_Monday1 {
@@ -781,7 +721,6 @@ namespace B555sched_inc {
   }
 
   /** hot water timer monday slot 3 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x02, 0x00, 0x02)
   model HwcTimer_Monday2 {
@@ -792,7 +731,6 @@ namespace B555sched_inc {
   }
 
   /** hot water timer tuesday slot 2 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x02, 0x01, 0x01)
   model HwcTimer_Tuesday1 {
@@ -803,7 +741,6 @@ namespace B555sched_inc {
   }
 
   /** hot water timer tuesday slot 3 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x02, 0x01, 0x02)
   model HwcTimer_Tuesday2 {
@@ -814,7 +751,6 @@ namespace B555sched_inc {
   }
 
   /** hot water timer wednesday slot 2 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x02, 0x02, 0x01)
   model HwcTimer_Wednesday1 {
@@ -825,7 +761,6 @@ namespace B555sched_inc {
   }
 
   /** hot water timer wednesday slot 3 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x02, 0x02, 0x02)
   model HwcTimer_Wednesday2 {
@@ -836,7 +771,6 @@ namespace B555sched_inc {
   }
 
   /** hot water timer thursday slot 2 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x02, 0x03, 0x01)
   model HwcTimer_Thursday1 {
@@ -847,7 +781,6 @@ namespace B555sched_inc {
   }
 
   /** hot water timer thursday slot 3 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x02, 0x03, 0x02)
   model HwcTimer_Thursday2 {
@@ -858,7 +791,6 @@ namespace B555sched_inc {
   }
 
   /** hot water timer friday slot 2 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x02, 0x04, 0x01)
   model HwcTimer_Friday1 {
@@ -869,7 +801,6 @@ namespace B555sched_inc {
   }
 
   /** hot water timer friday slot 3 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x02, 0x04, 0x02)
   model HwcTimer_Friday2 {
@@ -880,7 +811,6 @@ namespace B555sched_inc {
   }
 
   /** hot water timer saturday slot 2 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x02, 0x05, 0x01)
   model HwcTimer_Saturday1 {
@@ -891,7 +821,6 @@ namespace B555sched_inc {
   }
 
   /** hot water timer saturday slot 3 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x02, 0x05, 0x02)
   model HwcTimer_Saturday2 {
@@ -902,7 +831,6 @@ namespace B555sched_inc {
   }
 
   /** hot water timer sunday slot 2 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x02, 0x06, 0x01)
   model HwcTimer_Sunday1 {
@@ -913,7 +841,6 @@ namespace B555sched_inc {
   }
 
   /** hot water timer sunday slot 3 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x02, 0x06, 0x02)
   model HwcTimer_Sunday2 {
@@ -1008,7 +935,6 @@ namespace B555sched_inc {
   }
 
   /** cooling timer zone 1 monday slot 2 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x01, 0x00, 0x01)
   model Z1TimerCool_Monday1 {
@@ -1019,7 +945,6 @@ namespace B555sched_inc {
   }
 
   /** cooling timer zone 1 monday slot 3 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x01, 0x00, 0x02)
   model Z1TimerCool_Monday2 {
@@ -1030,7 +955,6 @@ namespace B555sched_inc {
   }
 
   /** cooling timer zone 1 tuesday slot 2 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x01, 0x01, 0x01)
   model Z1TimerCool_Tuesday1 {
@@ -1041,7 +965,6 @@ namespace B555sched_inc {
   }
 
   /** cooling timer zone 1 tuesday slot 3 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x01, 0x01, 0x02)
   model Z1TimerCool_Tuesday2 {
@@ -1052,7 +975,6 @@ namespace B555sched_inc {
   }
 
   /** cooling timer zone 1 wednesday slot 2 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x01, 0x02, 0x01)
   model Z1TimerCool_Wednesday1 {
@@ -1063,7 +985,6 @@ namespace B555sched_inc {
   }
 
   /** cooling timer zone 1 wednesday slot 3 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x01, 0x02, 0x02)
   model Z1TimerCool_Wednesday2 {
@@ -1074,7 +995,6 @@ namespace B555sched_inc {
   }
 
   /** cooling timer zone 1 thursday slot 2 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x01, 0x03, 0x01)
   model Z1TimerCool_Thursday1 {
@@ -1085,7 +1005,6 @@ namespace B555sched_inc {
   }
 
   /** cooling timer zone 1 thursday slot 3 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x01, 0x03, 0x02)
   model Z1TimerCool_Thursday2 {
@@ -1096,7 +1015,6 @@ namespace B555sched_inc {
   }
 
   /** cooling timer zone 1 friday slot 2 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x01, 0x04, 0x01)
   model Z1TimerCool_Friday1 {
@@ -1107,7 +1025,6 @@ namespace B555sched_inc {
   }
 
   /** cooling timer zone 1 friday slot 3 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x01, 0x04, 0x02)
   model Z1TimerCool_Friday2 {
@@ -1118,7 +1035,6 @@ namespace B555sched_inc {
   }
 
   /** cooling timer zone 1 saturday slot 2 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x01, 0x05, 0x01)
   model Z1TimerCool_Saturday1 {
@@ -1129,7 +1045,6 @@ namespace B555sched_inc {
   }
 
   /** cooling timer zone 1 saturday slot 3 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x01, 0x05, 0x02)
   model Z1TimerCool_Saturday2 {
@@ -1140,7 +1055,6 @@ namespace B555sched_inc {
   }
 
   /** cooling timer zone 1 sunday slot 2 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x01, 0x06, 0x01)
   model Z1TimerCool_Sunday1 {
@@ -1151,7 +1065,6 @@ namespace B555sched_inc {
   }
 
   /** cooling timer zone 1 sunday slot 3 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x01, 0x06, 0x02)
   model Z1TimerCool_Sunday2 {
@@ -1246,7 +1159,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 monday slot 7 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x00, 0x06)
   model Z1TimerHeat_Monday6 {
@@ -1257,7 +1169,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 monday slot 8 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x00, 0x07)
   model Z1TimerHeat_Monday7 {
@@ -1268,7 +1179,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 monday slot 9 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x00, 0x08)
   model Z1TimerHeat_Monday8 {
@@ -1279,7 +1189,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 monday slot 10 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x00, 0x09)
   model Z1TimerHeat_Monday9 {
@@ -1290,7 +1199,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 monday slot 11 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x00, 0x0a)
   model Z1TimerHeat_Monday10 {
@@ -1301,7 +1209,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 monday slot 12 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x00, 0x0b)
   model Z1TimerHeat_Monday11 {
@@ -1312,7 +1219,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 tuesday slot 7 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x01, 0x06)
   model Z1TimerHeat_Tuesday6 {
@@ -1323,7 +1229,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 tuesday slot 8 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x01, 0x07)
   model Z1TimerHeat_Tuesday7 {
@@ -1334,7 +1239,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 tuesday slot 9 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x01, 0x08)
   model Z1TimerHeat_Tuesday8 {
@@ -1345,7 +1249,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 tuesday slot 10 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x01, 0x09)
   model Z1TimerHeat_Tuesday9 {
@@ -1356,7 +1259,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 tuesday slot 11 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x01, 0x0a)
   model Z1TimerHeat_Tuesday10 {
@@ -1367,7 +1269,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 tuesday slot 12 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x01, 0x0b)
   model Z1TimerHeat_Tuesday11 {
@@ -1378,7 +1279,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 wednesday slot 7 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x02, 0x06)
   model Z1TimerHeat_Wednesday6 {
@@ -1389,7 +1289,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 wednesday slot 8 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x02, 0x07)
   model Z1TimerHeat_Wednesday7 {
@@ -1400,7 +1299,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 wednesday slot 9 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x02, 0x08)
   model Z1TimerHeat_Wednesday8 {
@@ -1411,7 +1309,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 wednesday slot 10 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x02, 0x09)
   model Z1TimerHeat_Wednesday9 {
@@ -1422,7 +1319,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 wednesday slot 11 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x02, 0x0a)
   model Z1TimerHeat_Wednesday10 {
@@ -1433,7 +1329,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 wednesday slot 12 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x02, 0x0b)
   model Z1TimerHeat_Wednesday11 {
@@ -1444,7 +1339,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 thursday slot 7 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x03, 0x06)
   model Z1TimerHeat_Thursday6 {
@@ -1455,7 +1349,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 thursday slot 8 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x03, 0x07)
   model Z1TimerHeat_Thursday7 {
@@ -1466,7 +1359,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 thursday slot 9 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x03, 0x08)
   model Z1TimerHeat_Thursday8 {
@@ -1477,7 +1369,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 thursday slot 10 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x03, 0x09)
   model Z1TimerHeat_Thursday9 {
@@ -1488,7 +1379,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 thursday slot 11 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x03, 0x0a)
   model Z1TimerHeat_Thursday10 {
@@ -1499,7 +1389,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 thursday slot 12 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x03, 0x0b)
   model Z1TimerHeat_Thursday11 {
@@ -1510,7 +1399,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 friday slot 7 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x04, 0x06)
   model Z1TimerHeat_Friday6 {
@@ -1521,7 +1409,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 friday slot 8 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x04, 0x07)
   model Z1TimerHeat_Friday7 {
@@ -1532,7 +1419,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 friday slot 9 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x04, 0x08)
   model Z1TimerHeat_Friday8 {
@@ -1543,7 +1429,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 friday slot 10 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x04, 0x09)
   model Z1TimerHeat_Friday9 {
@@ -1554,7 +1439,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 friday slot 11 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x04, 0x0a)
   model Z1TimerHeat_Friday10 {
@@ -1565,7 +1449,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 friday slot 12 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x04, 0x0b)
   model Z1TimerHeat_Friday11 {
@@ -1576,7 +1459,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 saturday slot 7 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x05, 0x06)
   model Z1TimerHeat_Saturday6 {
@@ -1587,7 +1469,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 saturday slot 8 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x05, 0x07)
   model Z1TimerHeat_Saturday7 {
@@ -1598,7 +1479,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 saturday slot 9 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x05, 0x08)
   model Z1TimerHeat_Saturday8 {
@@ -1609,7 +1489,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 saturday slot 10 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x05, 0x09)
   model Z1TimerHeat_Saturday9 {
@@ -1620,7 +1499,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 saturday slot 11 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x05, 0x0a)
   model Z1TimerHeat_Saturday10 {
@@ -1631,7 +1509,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 saturday slot 12 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x05, 0x0b)
   model Z1TimerHeat_Saturday11 {
@@ -1642,7 +1519,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 sunday slot 7 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x06, 0x06)
   model Z1TimerHeat_Sunday6 {
@@ -1653,7 +1529,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 sunday slot 8 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x06, 0x07)
   model Z1TimerHeat_Sunday7 {
@@ -1664,7 +1539,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 sunday slot 9 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x06, 0x08)
   model Z1TimerHeat_Sunday8 {
@@ -1675,7 +1549,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 sunday slot 10 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x06, 0x09)
   model Z1TimerHeat_Sunday9 {
@@ -1686,7 +1559,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 sunday slot 11 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x06, 0x0a)
   model Z1TimerHeat_Sunday10 {
@@ -1697,7 +1569,6 @@ namespace B555sched_inc {
   }
 
   /** heating timer zone 1 sunday slot 12 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x00, 0x06, 0x0b)
   model Z1TimerHeat_Sunday11 {
@@ -1708,7 +1579,6 @@ namespace B555sched_inc {
   }
 
   /** number of slots per weekday (silent mode timer) */
-  @poll(5)
   @inherit(r_a4)
   @ext(0x00, 0x04)
   model SilentTimerSlots {
@@ -1724,7 +1594,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer monday slot 1 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x00, 0x00)
   model SilentTimer_Monday0 {
@@ -1735,7 +1604,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer monday slot 2 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x00, 0x01)
   model SilentTimer_Monday1 {
@@ -1746,7 +1614,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer monday slot 3 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x00, 0x02)
   model SilentTimer_Monday2 {
@@ -1757,7 +1624,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer monday slot 4 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x00, 0x03)
   model SilentTimer_Monday3 {
@@ -1768,7 +1634,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer monday slot 5 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x00, 0x04)
   model SilentTimer_Monday4 {
@@ -1779,7 +1644,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer monday slot 6 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x00, 0x05)
   model SilentTimer_Monday5 {
@@ -1790,7 +1654,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer monday slot 7 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x00, 0x06)
   model SilentTimer_Monday6 {
@@ -1801,7 +1664,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer monday slot 8 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x00, 0x07)
   model SilentTimer_Monday7 {
@@ -1812,7 +1674,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer monday slot 9 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x00, 0x08)
   model SilentTimer_Monday8 {
@@ -1823,7 +1684,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer monday slot 10 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x00, 0x09)
   model SilentTimer_Monday9 {
@@ -1834,7 +1694,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer monday slot 11 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x00, 0x0a)
   model SilentTimer_Monday10 {
@@ -1845,7 +1704,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer monday slot 12 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x00, 0x0b)
   model SilentTimer_Monday11 {
@@ -1856,7 +1714,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer tuesday slot 1 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x01, 0x00)
   model SilentTimer_Tuesday0 {
@@ -1867,7 +1724,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer tuesday slot 2 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x01, 0x01)
   model SilentTimer_Tuesday1 {
@@ -1878,7 +1734,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer tuesday slot 3 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x01, 0x02)
   model SilentTimer_Tuesday2 {
@@ -1889,7 +1744,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer tuesday slot 4 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x01, 0x03)
   model SilentTimer_Tuesday3 {
@@ -1900,7 +1754,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer tuesday slot 5 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x01, 0x04)
   model SilentTimer_Tuesday4 {
@@ -1911,7 +1764,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer tuesday slot 6 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x01, 0x05)
   model SilentTimer_Tuesday5 {
@@ -1922,7 +1774,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer tuesday slot 7 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x01, 0x06)
   model SilentTimer_Tuesday6 {
@@ -1933,7 +1784,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer tuesday slot 8 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x01, 0x07)
   model SilentTimer_Tuesday7 {
@@ -1944,7 +1794,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer tuesday slot 9 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x01, 0x08)
   model SilentTimer_Tuesday8 {
@@ -1955,7 +1804,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer tuesday slot 10 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x01, 0x09)
   model SilentTimer_Tuesday9 {
@@ -1966,7 +1814,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer tuesday slot 11 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x01, 0x0a)
   model SilentTimer_Tuesday10 {
@@ -1977,7 +1824,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer tuesday slot 12 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x01, 0x0b)
   model SilentTimer_Tuesday11 {
@@ -1988,7 +1834,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer wednesday slot 1 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x02, 0x00)
   model SilentTimer_Wednesday0 {
@@ -1999,7 +1844,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer wednesday slot 2 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x02, 0x01)
   model SilentTimer_Wednesday1 {
@@ -2010,7 +1854,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer wednesday slot 3 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x02, 0x02)
   model SilentTimer_Wednesday2 {
@@ -2021,7 +1864,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer wednesday slot 4 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x02, 0x03)
   model SilentTimer_Wednesday3 {
@@ -2032,7 +1874,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer wednesday slot 5 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x02, 0x04)
   model SilentTimer_Wednesday4 {
@@ -2043,7 +1884,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer wednesday slot 6 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x02, 0x05)
   model SilentTimer_Wednesday5 {
@@ -2054,7 +1894,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer wednesday slot 7 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x02, 0x06)
   model SilentTimer_Wednesday6 {
@@ -2065,7 +1904,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer wednesday slot 8 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x02, 0x07)
   model SilentTimer_Wednesday7 {
@@ -2076,7 +1914,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer wednesday slot 9 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x02, 0x08)
   model SilentTimer_Wednesday8 {
@@ -2087,7 +1924,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer wednesday slot 10 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x02, 0x09)
   model SilentTimer_Wednesday9 {
@@ -2098,7 +1934,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer wednesday slot 11 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x02, 0x0a)
   model SilentTimer_Wednesday10 {
@@ -2109,7 +1944,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer wednesday slot 12 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x02, 0x0b)
   model SilentTimer_Wednesday11 {
@@ -2120,7 +1954,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer thursday slot 1 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x03, 0x00)
   model SilentTimer_Thursday0 {
@@ -2131,7 +1964,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer thursday slot 2 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x03, 0x01)
   model SilentTimer_Thursday1 {
@@ -2142,7 +1974,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer thursday slot 3 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x03, 0x02)
   model SilentTimer_Thursday2 {
@@ -2153,7 +1984,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer thursday slot 4 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x03, 0x03)
   model SilentTimer_Thursday3 {
@@ -2164,7 +1994,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer thursday slot 5 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x03, 0x04)
   model SilentTimer_Thursday4 {
@@ -2175,7 +2004,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer thursday slot 6 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x03, 0x05)
   model SilentTimer_Thursday5 {
@@ -2186,7 +2014,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer thursday slot 7 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x03, 0x06)
   model SilentTimer_Thursday6 {
@@ -2197,7 +2024,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer thursday slot 8 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x03, 0x07)
   model SilentTimer_Thursday7 {
@@ -2208,7 +2034,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer thursday slot 9 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x03, 0x08)
   model SilentTimer_Thursday8 {
@@ -2219,7 +2044,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer thursday slot 10 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x03, 0x09)
   model SilentTimer_Thursday9 {
@@ -2230,7 +2054,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer thursday slot 11 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x03, 0x0a)
   model SilentTimer_Thursday10 {
@@ -2241,7 +2064,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer thursday slot 12 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x03, 0x0b)
   model SilentTimer_Thursday11 {
@@ -2252,7 +2074,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer friday slot 1 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x04, 0x00)
   model SilentTimer_Friday0 {
@@ -2263,7 +2084,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer friday slot 2 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x04, 0x01)
   model SilentTimer_Friday1 {
@@ -2274,7 +2094,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer friday slot 3 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x04, 0x02)
   model SilentTimer_Friday2 {
@@ -2285,7 +2104,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer friday slot 4 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x04, 0x03)
   model SilentTimer_Friday3 {
@@ -2296,7 +2114,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer friday slot 5 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x04, 0x04)
   model SilentTimer_Friday4 {
@@ -2307,7 +2124,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer friday slot 6 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x04, 0x05)
   model SilentTimer_Friday5 {
@@ -2318,7 +2134,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer friday slot 7 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x04, 0x06)
   model SilentTimer_Friday6 {
@@ -2329,7 +2144,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer friday slot 8 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x04, 0x07)
   model SilentTimer_Friday7 {
@@ -2340,7 +2154,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer friday slot 9 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x04, 0x08)
   model SilentTimer_Friday8 {
@@ -2351,7 +2164,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer friday slot 10 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x04, 0x09)
   model SilentTimer_Friday9 {
@@ -2362,7 +2174,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer friday slot 11 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x04, 0x0a)
   model SilentTimer_Friday10 {
@@ -2373,7 +2184,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer friday slot 12 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x04, 0x0b)
   model SilentTimer_Friday11 {
@@ -2384,7 +2194,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer saturday slot 1 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x05, 0x00)
   model SilentTimer_Saturday0 {
@@ -2395,7 +2204,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer saturday slot 2 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x05, 0x01)
   model SilentTimer_Saturday1 {
@@ -2406,7 +2214,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer saturday slot 3 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x05, 0x02)
   model SilentTimer_Saturday2 {
@@ -2417,7 +2224,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer saturday slot 4 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x05, 0x03)
   model SilentTimer_Saturday3 {
@@ -2428,7 +2234,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer saturday slot 5 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x05, 0x04)
   model SilentTimer_Saturday4 {
@@ -2439,7 +2244,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer saturday slot 6 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x05, 0x05)
   model SilentTimer_Saturday5 {
@@ -2450,7 +2254,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer saturday slot 7 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x05, 0x06)
   model SilentTimer_Saturday6 {
@@ -2461,7 +2264,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer saturday slot 8 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x05, 0x07)
   model SilentTimer_Saturday7 {
@@ -2472,7 +2274,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer saturday slot 9 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x05, 0x08)
   model SilentTimer_Saturday8 {
@@ -2483,7 +2284,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer saturday slot 10 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x05, 0x09)
   model SilentTimer_Saturday9 {
@@ -2494,7 +2294,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer saturday slot 11 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x05, 0x0a)
   model SilentTimer_Saturday10 {
@@ -2505,7 +2304,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer saturday slot 12 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x05, 0x0b)
   model SilentTimer_Saturday11 {
@@ -2516,7 +2314,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer sunday slot 1 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x06, 0x00)
   model SilentTimer_Sunday0 {
@@ -2527,7 +2324,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer sunday slot 2 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x06, 0x01)
   model SilentTimer_Sunday1 {
@@ -2538,7 +2334,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer sunday slot 3 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x06, 0x02)
   model SilentTimer_Sunday2 {
@@ -2549,7 +2344,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer sunday slot 4 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x06, 0x03)
   model SilentTimer_Sunday3 {
@@ -2560,7 +2354,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer sunday slot 5 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x06, 0x04)
   model SilentTimer_Sunday4 {
@@ -2571,7 +2364,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer sunday slot 6 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x06, 0x05)
   model SilentTimer_Sunday5 {
@@ -2582,7 +2374,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer sunday slot 7 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x06, 0x06)
   model SilentTimer_Sunday6 {
@@ -2593,7 +2384,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer sunday slot 8 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x06, 0x07)
   model SilentTimer_Sunday7 {
@@ -2604,7 +2394,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer sunday slot 9 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x06, 0x08)
   model SilentTimer_Sunday8 {
@@ -2615,7 +2404,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer sunday slot 10 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x06, 0x09)
   model SilentTimer_Sunday9 {
@@ -2626,7 +2414,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer sunday slot 11 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x06, 0x0a)
   model SilentTimer_Sunday10 {
@@ -2637,7 +2424,6 @@ namespace B555sched_inc {
   }
 
   /** silent mode timer sunday slot 12 */
-  @poll(5)
   @inherit(r_a5)
   @ext(0x00, 0x04, 0x06, 0x0b)
   model SilentTimer_Sunday11 {

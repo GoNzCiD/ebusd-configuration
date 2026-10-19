@@ -343,10 +343,16 @@ model errors {
   error_5: error;
 }
 
+/** time */
+scalar errortime extends BTM;
+
+/** date */
+scalar errordate extends BDA3;
+
 model errorhistory {
   status: status;
-  time: time2;
-  date: date;
+  time: errortime;
+  date: errordate;
   error: error;
 }
 

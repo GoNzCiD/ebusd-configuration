@@ -139,7 +139,7 @@ r,,,Status01,Vorlauftemperatur/Rücklauftemperatur/Aussentemperatur/WW Temperatu
 r,,,Status02,Betriebsart/Maximaltemperatur/ReglerCurrentTemp/Maximaltemperatur/ReglerCurrentTemp,,,b511,02,hwcmode,,UCH,0=disabled;1=on;2=off;3=auto,,hot water mode,temp0,,UCH,,°C,max temperature,temp1,,D1C,,°C,current temperature,temp0_2,,UCH,,°C,max temperature,temp1_2,,D1C,,°C,current temperature
 uw,,,StatusCirPump,Status circulation pump,,,b512,00,,,UCH,0=off;100=on,,
 r,,,Currenterror,Current errors,,,b503,0001,error,,UIN,,,error number,error_2,,UIN,,,error number,error_3,,UIN,,,error number,error_4,,UIN,,,error number,error_5,,UIN,,,error number
-r,,,Errorhistory,Error_History,,,b503,0101,index,m,UCH,,,,status,,UCH,,,Status,time,,VTM,,,time,date,,HDA:3,,,date,error,,UIN,,,error number
+r,,,Errorhistory,Error_History,,,b503,0101,index,m,UCH,,,,status,,UCH,,,Status,time,,BTM,,,time,date,,BDA:3,,,date,error,,UIN,,,error number
 w,,install,Clearerrorhistory,Clear error history,,,b503,0201,cleared,s,UCH,0=no;1=yes,,
 r,,,StatTotalEnvAll,energy stat Total source Env usage All,,,b516,1000ffff02002134,ign,,IGN:7,,,,value,,EXP,,Wh,
 r,,,StatTotalEnvHeat,energy stat Total source Env usage Heat,,,b516,1000ffff02032134,ign,,IGN:7,,,,value,,EXP,,Wh,
