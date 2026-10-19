@@ -1155,6 +1155,7 @@ namespace Basv0 {
   @ext(0x17, 0)
   model z1Name1 {
     /** name of zone 1 */
+    @minLength(0)
     zname: zname;
   }
 
@@ -1163,6 +1164,7 @@ namespace Basv0 {
   @ext(0x18, 0)
   model z1Name2 {
     /** name of zone 1 */
+    @minLength(0)
     zname: zname;
   }
 
@@ -1404,6 +1406,7 @@ namespace Basv0 {
   @ext(0x17, 0)
   model z2Name1 {
     /** name of zone 2 */
+    @minLength(0)
     zname: zname;
   }
 
@@ -1412,6 +1415,7 @@ namespace Basv0 {
   @ext(0x18, 0)
   model z2Name2 {
     /** name of zone 2 */
+    @minLength(0)
     zname: zname;
   }
 
@@ -1569,6 +1573,7 @@ namespace Basv0 {
   @ext(0x17, 0)
   model z3Name1 {
     /** name of zone 3 */
+    @minLength(0)
     zname: zname;
   }
 
@@ -1577,6 +1582,7 @@ namespace Basv0 {
   @ext(0x18, 0)
   model z3Name2 {
     /** name of zone 3 */
+    @minLength(0)
     zname: zname;
   }
 

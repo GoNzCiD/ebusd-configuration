@@ -237,10 +237,10 @@ r,,,Z1ManualCoolingTemp,cooling setpoint zone 1,,,b524,020003001500,ign,,IGN:4,,
 w,,,Z1ManualCoolingTemp,cooling setpoint zone 1,,,b524,020103001500,tempv,,EXP,,°C,desired cooling setpoint for zone 1
 r,,,Z1Shortname,Kurzbezeichnung zone 1,,,b524,020003001600,ign,,IGN:4,,,,shortname,,STR:6,,,short name of zone 1
 w,,,Z1Shortname,Kurzbezeichnung zone 1,,,b524,020103001600,shortname,,STR:6,,,short name of zone 1
-r,,,Z1Name1,zone 1 label (first part),,,b524,020003001700,ign,,IGN:4,,,,zname,,STR:5,,,name of zone 1
-w,,,Z1Name1,zone 1 label (first part),,,b524,020103001700,zname,,STR:5,,,name of zone 1
-r,,,Z1Name2,zone 1 label (second part),,,b524,020003001800,ign,,IGN:4,,,,zname,,STR:5,,,name of zone 1
-w,,,Z1Name2,zone 1 label (second part),,,b524,020103001800,zname,,STR:5,,,name of zone 1
+r,,,Z1Name1,zone 1 label (first part),,,b524,020003001700,ign,,IGN:4,,,,zname,,STR:*,,,name of zone 1
+w,,,Z1Name1,zone 1 label (first part),,,b524,020103001700,zname,,STR:*,,,name of zone 1
+r,,,Z1Name2,zone 1 label (second part),,,b524,020003001800,ign,,IGN:4,,,,zname,,STR:*,,,name of zone 1
+w,,,Z1Name2,zone 1 label (second part),,,b524,020103001800,zname,,STR:*,,,name of zone 1
 r,,,Z1HolidayEndTime,end time of holidays for zone 1,,,b524,020003002000,ign,,IGN:4,,,,value,,HTI,,,
 w,,,Z1HolidayEndTime,end time of holidays for zone 1,,,b524,020103002000,value,,HTI,,,
 r,,,Z1HolidayStartTime,start time of holidays for zone 1,,,b524,020003002100,ign,,IGN:4,,,,value,,HTI,,,
@@ -291,10 +291,10 @@ r,,,Z2ActualRoomTempDesired,room temperature desired zone 2,,,b524,020003011400,
 w,,,Z2ActualRoomTempDesired,room temperature desired zone 2,,,b524,020103011400,tempv,,EXP,,°C,current room setpoint considering all basic conditions passed to the control algorithms
 r,,,Z2Shortname,Kurzbezeichnung zone 2,,,b524,020003011600,ign,,IGN:4,,,,shortname,,STR:6,,,short name of zone 2
 w,,,Z2Shortname,Kurzbezeichnung zone 2,,,b524,020103011600,shortname,,STR:6,,,short name of zone 2
-r,,,Z2Name1,zone 2 label (first part),,,b524,020003011700,ign,,IGN:4,,,,zname,,STR:5,,,name of zone 2
-w,,,Z2Name1,zone 2 label (first part),,,b524,020103011700,zname,,STR:5,,,name of zone 2
-r,,,Z2Name2,zone 2 label (second part),,,b524,020003011800,ign,,IGN:4,,,,zname,,STR:5,,,name of zone 2
-w,,,Z2Name2,zone 2 label (second part),,,b524,020103011800,zname,,STR:5,,,name of zone 2
+r,,,Z2Name1,zone 2 label (first part),,,b524,020003011700,ign,,IGN:4,,,,zname,,STR:*,,,name of zone 2
+w,,,Z2Name1,zone 2 label (first part),,,b524,020103011700,zname,,STR:*,,,name of zone 2
+r,,,Z2Name2,zone 2 label (second part),,,b524,020003011800,ign,,IGN:4,,,,zname,,STR:*,,,name of zone 2
+w,,,Z2Name2,zone 2 label (second part),,,b524,020103011800,zname,,STR:*,,,name of zone 2
 r,,,Z3OpModeCooling,cooling operation mode zone 3,,,b524,020003020100,ign,,IGN:4,,,,opmode,,UIN,0=off;1=auto;2=day;3=night,,operation mode for cooling of zone 3
 w,,,Z3OpModeCooling,cooling operation mode zone 3,,,b524,020103020100,opmode,,UIN,0=off;1=auto;2=day;3=night,,operation mode for cooling of zone 3
 r,,,Z3CoolingTemp,cooling setpoint zone 3,,,b524,020003020200,ign,,IGN:4,,,,tempv,,EXP,,°C,desired cooling setpoint for zone 3
@@ -328,10 +328,10 @@ r,,,Z3ActualRoomTempDesired,room temperature desired zone 3,,,b524,020003021400,
 w,,,Z3ActualRoomTempDesired,room temperature desired zone 3,,,b524,020103021400,tempv,,EXP,,°C,current room setpoint considering all basic conditions passed to the control algorithms
 r,,,Z3Shortname,shortlabel zone 3,,,b524,020003021600,ign,,IGN:4,,,,shortname,,STR:6,,,short name of zone 3
 w,,,Z3Shortname,shortlabel zone 3,,,b524,020103021600,shortname,,STR:6,,,short name of zone 3
-r,,,Z3Name1,label zone 3 part 1,,,b524,020003021700,ign,,IGN:4,,,,zname,,STR:5,,,name of zone 3
-w,,,Z3Name1,label zone 3 part 1,,,b524,020103021700,zname,,STR:5,,,name of zone 3
-r,,,Z3Name2,label zone 3 part 2,,,b524,020003021800,ign,,IGN:4,,,,zname,,STR:5,,,name of zone 3
-w,,,Z3Name2,label zone 3 part 2,,,b524,020103021800,zname,,STR:5,,,name of zone 3
+r,,,Z3Name1,label zone 3 part 1,,,b524,020003021700,ign,,IGN:4,,,,zname,,STR:*,,,name of zone 3
+w,,,Z3Name1,label zone 3 part 1,,,b524,020103021700,zname,,STR:*,,,name of zone 3
+r,,,Z3Name2,label zone 3 part 2,,,b524,020003021800,ign,,IGN:4,,,,zname,,STR:*,,,name of zone 3
+w,,,Z3Name2,label zone 3 part 2,,,b524,020103021800,zname,,STR:*,,,name of zone 3
 r,,,Currenterror,Current errors,,,b503,0001,error,,UIN,,,error number,error_2,,UIN,,,error number,error_3,,UIN,,,error number,error_4,,UIN,,,error number,error_5,,UIN,,,error number
 r,,,Errorhistory,Error_History,,,b503,0101,index,m,UCH,,,,status,,UCH,,,Status,time,,BTM,,,time,date,,BDA:3,,,date,error,,UIN,,,error number
 w,,install,Clearerrorhistory,Clear error history,,,b503,0201,cleared,s,UCH,0=no;1=yes,,
