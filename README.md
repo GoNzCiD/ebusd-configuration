@@ -6,26 +6,15 @@ Este repositorio utiliza **TypeSpec** (`.tsp`) como formato fuente para definir 
 
 ### Cómo generar los archivos CSV
 
-1. **Prerequisitos**: Asegúrate de tener Node.js instalado en tu sistema.
+Desde la raíz del repositorio:
 
-2. **Instalar dependencias**:
-   ```bash
-   npm install
-   ```
+```bash
+./compile-csv.sh
+```
 
-3. **Compilar los archivos TypeSpec a CSV**:
-   ```bash
-   npm run maintsp && npm run compile-en
-   ```
-   
-   Este comando compilará todos los archivos `.tsp` del directorio `src/` y generará los archivos CSV correspondientes en el directorio `outcsv/en/`.
+El script comprueba Node.js 22 o superior, npm y python3. Si falta alguno, explica qué instalar y se detiene. Después instala las dependencias del proyecto si todavía no están, regenera `src/main.tsp` y compila los `.tsp` de `src/` a CSV en `outcsv/@ebusd/ebus-typespec/`.
 
-4. **Para otros idiomas**, utiliza los comandos correspondientes:
-   ```bash
-   npm run compile-de  # Para alemán
-   npm run compile-fr  # Para francés
-   # etc.
-   ```
+Para el alemán: `npm run compile-de` (salida en `outcsv.de/`).
 
 ### Compatibilidad de entidades con el repositorio antiguo
 
