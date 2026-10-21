@@ -221,6 +221,9 @@
  "hmu00|CondenserOutletTemp|r": {
   "0": ""
  },
+ "hmu00|CoolantCompressorHysteresis|r": {
+  "0": ""
+ },
  "hmu00|CoolingEnabled|r": {
   "0": ""
  },

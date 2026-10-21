@@ -523,6 +523,21 @@ namespace Hmu00 {
     value: UIN;
   }
 
+  /** default *r block 05ff35. The old csv template is B51A + 05FF, and 353f is appended. */
+  @base(MF, 0x1a, 0x5, 0xff, 0x35)
+  model r_stats_35 {
+    @maxLength(3)
+    ign: IGN;
+  }
+
+  /** D.363 Coolant compressor hysteresis. Read only, D2C in K. */
+  @inherit(r_stats_35)
+  @ext(0x3f)
+  model CoolantCompressorHysteresis {
+    @unit("K")
+    value: D2C;
+  }
+
   /** D.366 Fan boost */
   @inherit(r_stats_ext_noign)
   @ext(0x54, 0x1, 0x5)
