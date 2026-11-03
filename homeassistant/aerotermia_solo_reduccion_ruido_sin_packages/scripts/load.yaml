@@ -1,0 +1,57 @@
+# Pegar en un script nuevo de la UI.
+# Nombre: Aerothermal noise reduction schedule load
+# El id tiene que quedar en script.aerothermal_noise_reduction_schedule_load
+alias: Aerothermal noise reduction schedule load
+mode: single
+icon: mdi:download
+description: Lee las 3 franjas del día elegido y las copia a los horarios del formulario. No escribe en el bus. 24:00 se muestra como 23:59.
+sequence:
+  - variables:
+      dias_en:
+        - Monday
+        - Tuesday
+        - Wednesday
+        - Thursday
+        - Friday
+        - Saturday
+        - Sunday
+      dia_idx: "{{ state_attr('input_select.aerothermal_noise_reduction_schedule_day', 'options').index(states('input_select.aerothermal_noise_reduction_schedule_day')) }}"
+      dia_en: "{{ dias_en[dia_idx | int] }}"
+      desde_ids:
+        - input_datetime.aerothermal_noise_reduction_schedule_slot_1_from
+        - input_datetime.aerothermal_noise_reduction_schedule_slot_2_from
+        - input_datetime.aerothermal_noise_reduction_schedule_slot_3_from
+      hasta_ids:
+        - input_datetime.aerothermal_noise_reduction_schedule_slot_1_to
+        - input_datetime.aerothermal_noise_reduction_schedule_slot_2_to
+        - input_datetime.aerothermal_noise_reduction_schedule_slot_3_to
+  - repeat:
+      count: 3
+      sequence:
+        - action: mqtt.publish
+          data:
+            topic: "ebusd/bass2/SilentTimer_{{ dia_en }}{{ repeat.index - 1 }}/get"
+            payload: "1"
+            retain: false
+        - wait_for_trigger:
+            - trigger: mqtt
+              topic: "ebusd/bass2/SilentTimer_{{ dia_en }}{{ repeat.index - 1 }}"
+          timeout:
+            seconds: 5
+          continue_on_timeout: false
+        - variables:
+            f: "{{ wait.trigger.payload_json.from.value }}"
+            t: "{{ wait.trigger.payload_json.to.value }}"
+            hay: "{{ f != t }}"
+            d: "{{ ((f if hay else '00:00') | replace('24:00', '23:59')) ~ ':00' }}"
+            h: "{{ ((t if hay else '00:00') | replace('24:00', '23:59')) ~ ':00' }}"
+        - action: input_datetime.set_datetime
+          target:
+            entity_id: "{{ desde_ids[repeat.index - 1] }}"
+          data:
+            time: "{{ d }}"
+        - action: input_datetime.set_datetime
+          target:
+            entity_id: "{{ hasta_ids[repeat.index - 1] }}"
+          data:
+            time: "{{ h }}"

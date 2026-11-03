@@ -1,0 +1,67 @@
+# Pegar en un script nuevo de la UI.
+# Nombre: Aerothermal noise reduction schedule refresh
+# El id tiene que quedar en script.aerothermal_noise_reduction_schedule_refresh
+alias: Aerothermal noise reduction schedule refresh
+mode: single
+icon: mdi:refresh
+description: Lee del termostato las 3 franjas de reducción de ruido de los 7 días y las guarda en los input_text. No escribe en el bus.
+sequence:
+  - variables:
+      dias_en:
+        - Monday
+        - Tuesday
+        - Wednesday
+        - Thursday
+        - Friday
+        - Saturday
+        - Sunday
+      textos:
+        - input_text.aerothermal_noise_reduction_schedule_monday
+        - input_text.aerothermal_noise_reduction_schedule_tuesday
+        - input_text.aerothermal_noise_reduction_schedule_wednesday
+        - input_text.aerothermal_noise_reduction_schedule_thursday
+        - input_text.aerothermal_noise_reduction_schedule_friday
+        - input_text.aerothermal_noise_reduction_schedule_saturday
+        - input_text.aerothermal_noise_reduction_schedule_sunday
+  - repeat:
+      count: 7
+      sequence:
+        - variables:
+            dia_en: "{{ dias_en[repeat.index - 1] }}"
+            destino: "{{ textos[repeat.index - 1] }}"
+        - action: input_text.set_value
+          target:
+            entity_id: "{{ destino }}"
+          data:
+            value: "—"
+        - delay:
+            milliseconds: 200
+        - repeat:
+            count: 3
+            sequence:
+              - action: mqtt.publish
+                data:
+                  topic: "ebusd/bass2/SilentTimer_{{ dia_en }}{{ repeat.index - 1 }}/get"
+                  payload: "1"
+                  retain: false
+              - wait_for_trigger:
+                  - trigger: mqtt
+                    topic: "ebusd/bass2/SilentTimer_{{ dia_en }}{{ repeat.index - 1 }}"
+                timeout:
+                  seconds: 5
+                continue_on_timeout: true
+              - variables:
+                  franja: >-
+                    {% if wait.completed and wait.trigger.payload_json.from.value != wait.trigger.payload_json.to.value %}
+                    {{ wait.trigger.payload_json.from.value }}-{{ wait.trigger.payload_json.to.value }}
+                    {% endif %}
+                  previo: "{{ states(destino) }}"
+              - if:
+                  - condition: template
+                    value_template: "{{ franja | trim != '' }}"
+                then:
+                  - action: input_text.set_value
+                    target:
+                      entity_id: "{{ destino }}"
+                    data:
+                      value: "{{ franja if previo in ['—', '', 'unknown', 'unavailable'] else previo ~ ' · ' ~ franja }}"

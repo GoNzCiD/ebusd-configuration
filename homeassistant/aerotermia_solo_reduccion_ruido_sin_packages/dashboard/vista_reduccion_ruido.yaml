@@ -1,0 +1,157 @@
+# Vista para pegar dentro de views: de un dashboard.
+type: sections
+max_columns: 2
+title: Reducción de ruido
+path: reduccion_ruido
+icon: mdi:volume-off
+sections:
+  - type: grid
+    cards:
+      - type: heading
+        heading: Reducción de ruido
+        icon: mdi:volume-off
+        badges:
+          - type: button
+            icon: mdi:refresh
+            tap_action:
+              action: perform-action
+              perform_action: script.aerothermal_noise_reduction_schedule_refresh
+      - type: markdown
+        grid_options:
+          columns: full
+        content: |-
+          **Ahora:** {{ states('binary_sensor.ebusd_broadcast_noisereduction_onoff') }} · **Nivel:** {{ states('number.ebusd_full_noisereductionlevel_value') }} %
+
+          Pulsa un día para cargarlo en el formulario. Hasta 3 franjas. 00:00-00:00 es una franja vacía; las tres vacías dejan el día sin reducción de ruido. El texto de cada día es la última lectura; editarlo no cambia el termostato.
+      - type: custom:mushroom-template-card
+        grid_options:
+          columns: full
+        primary: Lunes
+        secondary: "{{ states('input_text.aerothermal_noise_reduction_schedule_monday') }}"
+        icon: mdi:volume-off
+        tap_action:
+          action: perform-action
+          perform_action: script.aerothermal_noise_reduction_schedule_select
+          data:
+            dia: Lunes
+      - type: custom:mushroom-template-card
+        grid_options:
+          columns: full
+        primary: Martes
+        secondary: "{{ states('input_text.aerothermal_noise_reduction_schedule_tuesday') }}"
+        icon: mdi:volume-off
+        tap_action:
+          action: perform-action
+          perform_action: script.aerothermal_noise_reduction_schedule_select
+          data:
+            dia: Martes
+      - type: custom:mushroom-template-card
+        grid_options:
+          columns: full
+        primary: Miércoles
+        secondary: "{{ states('input_text.aerothermal_noise_reduction_schedule_wednesday') }}"
+        icon: mdi:volume-off
+        tap_action:
+          action: perform-action
+          perform_action: script.aerothermal_noise_reduction_schedule_select
+          data:
+            dia: Miércoles
+      - type: custom:mushroom-template-card
+        grid_options:
+          columns: full
+        primary: Jueves
+        secondary: "{{ states('input_text.aerothermal_noise_reduction_schedule_thursday') }}"
+        icon: mdi:volume-off
+        tap_action:
+          action: perform-action
+          perform_action: script.aerothermal_noise_reduction_schedule_select
+          data:
+            dia: Jueves
+      - type: custom:mushroom-template-card
+        grid_options:
+          columns: full
+        primary: Viernes
+        secondary: "{{ states('input_text.aerothermal_noise_reduction_schedule_friday') }}"
+        icon: mdi:volume-off
+        tap_action:
+          action: perform-action
+          perform_action: script.aerothermal_noise_reduction_schedule_select
+          data:
+            dia: Viernes
+      - type: custom:mushroom-template-card
+        grid_options:
+          columns: full
+        primary: Sábado
+        secondary: "{{ states('input_text.aerothermal_noise_reduction_schedule_saturday') }}"
+        icon: mdi:volume-off
+        tap_action:
+          action: perform-action
+          perform_action: script.aerothermal_noise_reduction_schedule_select
+          data:
+            dia: Sábado
+      - type: custom:mushroom-template-card
+        grid_options:
+          columns: full
+        primary: Domingo
+        secondary: "{{ states('input_text.aerothermal_noise_reduction_schedule_sunday') }}"
+        icon: mdi:volume-off
+        tap_action:
+          action: perform-action
+          perform_action: script.aerothermal_noise_reduction_schedule_select
+          data:
+            dia: Domingo
+  - type: grid
+    cards:
+      - type: heading
+        heading: Editar un día
+        icon: mdi:calendar-edit
+      - type: markdown
+        grid_options:
+          columns: full
+        content: |-
+          Editando: **{{ states('input_select.aerothermal_noise_reduction_schedule_day') }}** — hoy es {{ ['lunes','martes','miércoles','jueves','viernes','sábado','domingo'][now().weekday()] }}{% if is_state('script.aerothermal_noise_reduction_schedule_load', 'on') %}
+          Cargando horario del termostato…{% endif %}
+      - type: entities
+        grid_options:
+          columns: full
+        entities:
+          - entity: input_select.aerothermal_noise_reduction_schedule_day
+            name: Día
+          - type: button
+            name: Cargar el horario actual del día
+            icon: mdi:download
+            action_name: CARGAR
+            tap_action:
+              action: perform-action
+              perform_action: script.turn_on
+              target:
+                entity_id: script.aerothermal_noise_reduction_schedule_load
+          - type: section
+            label: Franjas (00:00–00:00 es vacía; no dejes huecos)
+          - entity: input_datetime.aerothermal_noise_reduction_schedule_slot_1_from
+            name: Franja 1 desde
+          - entity: input_datetime.aerothermal_noise_reduction_schedule_slot_1_to
+            name: Franja 1 hasta
+          - entity: input_datetime.aerothermal_noise_reduction_schedule_slot_2_from
+            name: Franja 2 desde
+          - entity: input_datetime.aerothermal_noise_reduction_schedule_slot_2_to
+            name: Franja 2 hasta
+          - entity: input_datetime.aerothermal_noise_reduction_schedule_slot_3_from
+            name: Franja 3 desde
+          - entity: input_datetime.aerothermal_noise_reduction_schedule_slot_3_to
+            name: Franja 3 hasta
+      - type: tile
+        grid_options:
+          columns: full
+        entity: script.aerothermal_noise_reduction_schedule_apply
+        name: Aplicar al termostato
+        icon: mdi:content-save-alert
+        color: red
+        hide_state: true
+        tap_action:
+          action: perform-action
+          perform_action: script.turn_on
+          target:
+            entity_id: script.aerothermal_noise_reduction_schedule_apply
+          confirmation:
+            text: Se escribirán en el termostato las franjas de reducción de ruido de este día. Con las tres en 00:00 el día queda vacío. ¿Continuar?

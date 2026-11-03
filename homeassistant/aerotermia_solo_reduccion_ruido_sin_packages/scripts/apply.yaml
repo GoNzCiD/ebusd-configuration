@@ -1,0 +1,99 @@
+# Pegar en un script nuevo de la UI.
+# Nombre: Aerothermal noise reduction schedule apply
+# El id tiene que quedar en script.aerothermal_noise_reduction_schedule_apply
+alias: Aerothermal noise reduction schedule apply
+mode: single
+icon: mdi:volume-off
+description: Escribe en el termostato (circuito bass2) las franjas de reducción de ruido del día elegido. Hasta 3, sin huecos ni solapes. 00:00-00:00 es vacía. El día puede quedar vacío. hasta 23:59 y 00:00 se envían como 24:00.
+sequence:
+  - variables:
+      dias_en:
+        - Monday
+        - Tuesday
+        - Wednesday
+        - Thursday
+        - Friday
+        - Saturday
+        - Sunday
+      slugs:
+        - monday
+        - tuesday
+        - wednesday
+        - thursday
+        - friday
+        - saturday
+        - sunday
+      dia_idx: "{{ state_attr('input_select.aerothermal_noise_reduction_schedule_day', 'options').index(states('input_select.aerothermal_noise_reduction_schedule_day')) }}"
+      dia_en: "{{ dias_en[dia_idx | int] }}"
+      slug: "{{ slugs[dia_idx | int] }}"
+      desde: "{{ [states('input_datetime.aerothermal_noise_reduction_schedule_slot_1_from')[:5], states('input_datetime.aerothermal_noise_reduction_schedule_slot_2_from')[:5], states('input_datetime.aerothermal_noise_reduction_schedule_slot_3_from')[:5]] }}"
+      hasta_raw: "{{ [states('input_datetime.aerothermal_noise_reduction_schedule_slot_1_to')[:5], states('input_datetime.aerothermal_noise_reduction_schedule_slot_2_to')[:5], states('input_datetime.aerothermal_noise_reduction_schedule_slot_3_to')[:5]] }}"
+      hasta: "{{ hasta_raw | map('replace', '00:00', '24:00') | map('replace', '23:59', '24:00') | list }}"
+      total: "{% set ns = namespace(n=0) %}{% for i in range(3) %}{% if desde[i] != hasta_raw[i] %}{% set ns.n = i + 1 %}{% endif %}{% endfor %}{{ ns.n }}"
+      valido: "{% set ns = namespace(ok=true) %}{% for i in range(total | int) %}{% if desde[i] == hasta_raw[i] or desde[i] >= hasta[i] %}{% set ns.ok = false %}{% endif %}{% if i > 0 and desde[i] < hasta[i - 1] %}{% set ns.ok = false %}{% endif %}{% endfor %}{{ ns.ok }}"
+  - if:
+      - condition: template
+        value_template: "{{ valido }}"
+    then:
+      - repeat:
+          count: "{{ [total | int, 1] | max }}"
+          sequence:
+            - action: mqtt.publish
+              data:
+                topic: "ebusd/bass2/SilentTimerSet_{{ dia_en }}/set"
+                payload: "{{ '0;0;00:00;00:00' if total | int == 0 else (repeat.index - 1) ~ ';' ~ total ~ ';' ~ desde[repeat.index - 1] ~ ';' ~ hasta[repeat.index - 1] }}"
+                qos: 1
+                retain: false
+            - delay:
+                milliseconds: 1500
+      - action: input_text.set_value
+        target:
+          entity_id: "input_text.aerothermal_noise_reduction_schedule_{{ slug }}"
+        data:
+          value: "—"
+      - delay:
+          milliseconds: 200
+      - variables:
+          destino: "input_text.aerothermal_noise_reduction_schedule_{{ slug }}"
+      - repeat:
+          count: 3
+          sequence:
+            - action: mqtt.publish
+              data:
+                topic: "ebusd/bass2/SilentTimer_{{ dia_en }}{{ repeat.index - 1 }}/get"
+                payload: "1"
+                retain: false
+            - wait_for_trigger:
+                - trigger: mqtt
+                  topic: "ebusd/bass2/SilentTimer_{{ dia_en }}{{ repeat.index - 1 }}"
+              timeout:
+                seconds: 5
+              continue_on_timeout: true
+            - variables:
+                franja: >-
+                  {% if wait.completed and wait.trigger.payload_json.from.value != wait.trigger.payload_json.to.value %}
+                  {{ wait.trigger.payload_json.from.value }}-{{ wait.trigger.payload_json.to.value }}
+                  {% endif %}
+                previo: "{{ states(destino) }}"
+            - if:
+                - condition: template
+                  value_template: "{{ franja | trim != '' }}"
+              then:
+                - action: input_text.set_value
+                  target:
+                    entity_id: "{{ destino }}"
+                  data:
+                    value: "{{ franja if previo in ['—', '', 'unknown', 'unavailable'] else previo ~ ' · ' ~ franja }}"
+      - action: persistent_notification.create
+        data:
+          title: Horario de reducción de ruido enviado
+          message: "{{ states('input_select.aerothermal_noise_reduction_schedule_day') }}: {{ total }} franja(s)."
+          notification_id: aerothermal_noise_reduction_schedule
+    else:
+      - action: persistent_notification.create
+        data:
+          title: Horario de reducción de ruido NO enviado
+          message: "Franjas no válidas: cada desde debe ser anterior a su hasta, sin solapes ni huecos. El día vacío sí es válido. Desde={{ desde }} Hasta={{ hasta_raw }}"
+          notification_id: aerothermal_noise_reduction_schedule
+      - stop: Franjas no válidas
+        error: true

@@ -1,0 +1,28 @@
+# Pegar en un script nuevo de la UI.
+# Nombre: Aerothermal noise reduction schedule select
+# El id tiene que quedar en script.aerothermal_noise_reduction_schedule_select
+alias: Aerothermal noise reduction schedule select
+mode: single
+icon: mdi:cursor-default-click
+description: Pone el día en el formulario y carga su horario.
+fields:
+  dia:
+    name: Día
+    required: true
+    selector:
+      select:
+        options:
+          - Lunes
+          - Martes
+          - Miércoles
+          - Jueves
+          - Viernes
+          - Sábado
+          - Domingo
+sequence:
+  - action: input_select.select_option
+    target:
+      entity_id: input_select.aerothermal_noise_reduction_schedule_day
+    data:
+      option: "{{ dia }}"
+  - action: script.aerothermal_noise_reduction_schedule_load
