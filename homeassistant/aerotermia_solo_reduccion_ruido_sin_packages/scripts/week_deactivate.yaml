@@ -1,0 +1,39 @@
+# Pegar en un script nuevo de la UI.
+# Nombre: Aerothermal noise reduction schedule week deactivate
+# El id tiene que quedar en script.aerothermal_noise_reduction_schedule_week_deactivate
+alias: Aerothermal noise reduction schedule week deactivate
+mode: single
+icon: mdi:volume-high
+description: Borra las franjas de reducción de ruido de los 7 días en el termostato (circuito bass2) y relee el resultado.
+sequence:
+  - variables:
+      dias_en:
+        - Monday
+        - Tuesday
+        - Wednesday
+        - Thursday
+        - Friday
+        - Saturday
+        - Sunday
+  - action: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.aerothermal_noise_reduction_schedule_week_active
+  - repeat:
+      for_each: "{{ dias_en }}"
+      sequence:
+        - action: mqtt.publish
+          data:
+            topic: "ebusd/bass2/SilentTimerSet_{{ repeat.item }}/set"
+            payload: "0;0;00:00;00:00"
+            qos: 1
+            retain: false
+        - delay:
+            milliseconds: 1500
+  - delay:
+      seconds: 2
+  - action: script.aerothermal_noise_reduction_schedule_refresh
+  - action: persistent_notification.create
+    data:
+      title: Reducción de ruido desactivada
+      message: Se han eliminado todas las franjas de reducción de ruido de la semana (lunes a domingo).
+      notification_id: aerothermal_noise_reduction_schedule_week

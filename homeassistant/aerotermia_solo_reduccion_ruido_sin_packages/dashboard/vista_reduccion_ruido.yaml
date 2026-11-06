@@ -23,6 +23,34 @@ sections:
           **Ahora:** {{ states('binary_sensor.ebusd_broadcast_noisereduction_onoff') }} · **Nivel:** {{ states('number.ebusd_full_noisereductionlevel_value') }} %
 
           Pulsa un día para cargarlo en el formulario. Hasta 3 franjas. 00:00-00:00 es una franja vacía; las tres vacías dejan el día sin reducción de ruido. El texto de cada día es la última lectura; editarlo no cambia el termostato.
+      - type: heading
+        heading: Toda la semana
+        icon: mdi:calendar-week
+      - type: markdown
+        grid_options:
+          columns: full
+        content: |-
+          La misma franja, de lunes a domingo. Si «desde» es posterior a «hasta», el día queda en dos tramos: 00:00–hasta y desde–24:00. 00:00 y 23:59 como fin se envían como 24:00.
+
+          Encender sustituye el horario de los 7 días. Apagar los deja vacíos. El interruptor muestra si algún día tiene franjas; con él ya encendido, apágalo y enciéndelo para aplicar horas nuevas.
+      - type: entities
+        grid_options:
+          columns: full
+        entities:
+          - entity: input_datetime.aerothermal_noise_reduction_schedule_week_from
+            name: Desde
+          - entity: input_datetime.aerothermal_noise_reduction_schedule_week_to
+            name: Hasta
+      - type: tile
+        grid_options:
+          columns: full
+        entity: switch.aerothermal_noise_reduction_schedule_week
+        name: Toda la semana
+        icon: mdi:calendar-week
+        tap_action:
+          action: toggle
+          confirmation:
+            text: Se escribirá en el termostato. Encender sustituye la reducción de ruido de los 7 días por esta franja. Apagar borra todas las franjas de la semana. ¿Continuar?
       - type: custom:mushroom-template-card
         grid_options:
           columns: full

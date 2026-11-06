@@ -1,0 +1,62 @@
+# Pegar en un script nuevo de la UI.
+# Nombre: Aerothermal noise reduction schedule week activate
+# El id tiene que quedar en script.aerothermal_noise_reduction_schedule_week_activate
+alias: Aerothermal noise reduction schedule week activate
+mode: single
+icon: mdi:volume-off
+description: Escribe en el termostato (circuito bass2) la misma franja de reducción de ruido en los 7 días. Si desde es posterior a hasta, manda dos franjas (00:00–hasta y desde–24:00). Hasta 00:00 y 23:59 se envían como 24:00. Luego relee los 7 días.
+sequence:
+  - variables:
+      dias_en:
+        - Monday
+        - Tuesday
+        - Wednesday
+        - Thursday
+        - Friday
+        - Saturday
+        - Sunday
+      d_raw: "{{ states('input_datetime.aerothermal_noise_reduction_schedule_week_from') }}"
+      h_raw: "{{ states('input_datetime.aerothermal_noise_reduction_schedule_week_to') }}"
+      desde: "{{ d_raw[:5] if d_raw not in ['unknown', 'unavailable', ''] else '00:00' }}"
+      hasta_val: "{{ h_raw[:5] if h_raw not in ['unknown', 'unavailable', ''] else '23:59' }}"
+      cruza_medianoche: "{{ desde > hasta_val and hasta_val not in ['00:00', '23:59'] }}"
+      hasta_eff: "{{ '24:00' if hasta_val in ['00:00', '23:59'] else hasta_val }}"
+      payloads: >-
+        {% if cruza_medianoche | bool %}
+          {{ ['0;2;00:00;' ~ hasta_val, '1;2;' ~ desde ~ ';24:00'] }}
+        {% else %}
+          {{ ['0;1;' ~ desde ~ ';' ~ hasta_eff] }}
+        {% endif %}
+  - action: input_boolean.turn_on
+    target:
+      entity_id: input_boolean.aerothermal_noise_reduction_schedule_week_active
+  - repeat:
+      for_each: "{{ dias_en }}"
+      sequence:
+        - variables:
+            dia: "{{ repeat.item }}"
+        - repeat:
+            for_each: "{{ payloads }}"
+            sequence:
+              - action: mqtt.publish
+                data:
+                  topic: "ebusd/bass2/SilentTimerSet_{{ dia }}/set"
+                  payload: "{{ repeat.item }}"
+                  qos: 1
+                  retain: false
+              - delay:
+                  milliseconds: 1500
+  - delay:
+      seconds: 2
+  - action: script.aerothermal_noise_reduction_schedule_refresh
+  - action: persistent_notification.create
+    data:
+      title: Reducción de ruido activada
+      message: >-
+        Horario aplicado a toda la semana (lunes a domingo):
+        {% if cruza_medianoche | bool %}
+          00:00-{{ hasta_val }} y {{ desde }}-24:00.
+        {% else %}
+          {{ desde }}-{{ hasta_eff }}.
+        {% endif %}
+      notification_id: aerothermal_noise_reduction_schedule_week
